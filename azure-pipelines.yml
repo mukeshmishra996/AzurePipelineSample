@@ -15,5 +15,4 @@ steps:
     dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
     
 - task: PublishBuildArtifacts@1
-    Package: $(System.ArtifactsDirectory)/**/*.zip
 
