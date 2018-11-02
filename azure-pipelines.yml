@@ -18,7 +18,7 @@ steps:
 
 - task: AzureRmWebAppDeployment@3
   inputs:
-    azureSubscription: 'Free Trial'
+    azureSubscription: 'Free Trial (0eb69558-e884-48b4-b986-7e786929d757)'
     WebAppName: 'azurepipelinesampleapp'
     DeployToSlotFlag: true
     ResourceGroupName: 'MyAzurePipeline'
@@ -26,7 +26,7 @@ steps:
 
 - task: AzureAppServiceManage@0
   inputs:
-    azureSubscription: 'Free Trial'
+    azureSubscription: 'Free Trial (0eb69558-e884-48b4-b986-7e786929d757)'
     WebAppName: 'azurepipelinesampleapp'
     ResourceGroupName: 'MyAzurePipeline'
     SourceSlot: staging
