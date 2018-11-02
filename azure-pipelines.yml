@@ -8,9 +8,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-
-steps:
-      
+   
 steps:
 - script: |
     dotnet build --configuration $(buildConfiguration)
