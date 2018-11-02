@@ -11,18 +11,11 @@ variables:
 
 steps:
       
+steps:
 - script: |
     dotnet build --configuration $(buildConfiguration)
+    dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
     
-  - task: ArchiveFiles@2
-    displayName: "Archive files"
-    inputs:
-      rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
-      includeRootFolder: false
-      archiveFile: "$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip"
-      
-  - task: PublishBuildArtifacts@1
-    inputs:
-      PathtoPublish: '$(System.DefaultWorkingDirectory)'
-      name: 'drop'
+- task: PublishBuildArtifacts@1
+    Package: $(System.ArtifactsDirectory)/**/*.zip
 
